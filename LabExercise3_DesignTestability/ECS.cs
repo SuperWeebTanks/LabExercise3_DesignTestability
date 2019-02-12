@@ -1,16 +1,18 @@
-﻿namespace ECS.Legacy
+﻿using System.ComponentModel;
+
+namespace ECS.Legacy
 {
     public class ECS
     {
         private int _threshold;
-        private readonly TempSensor _tempSensor;
-        private readonly Heater _heater;
+        private readonly ISensorCtrl _tempSensor;
+        private readonly IHeaterCtrl _heater;
 
-        public ECS(int thr)
+        public ECS(int thr, IHeaterCtrl heater, ISensorCtrl tempSensor) //Constructor injection
         {
             SetThreshold(thr);
-            _tempSensor = new TempSensor();
-            _heater = new Heater();
+            _tempSensor = tempSensor;
+            _heater = heater;
         }
 
         public void Regulate()
