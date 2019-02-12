@@ -5,13 +5,13 @@ namespace ECS.Legacy
     public class ECS
     {
         private int _threshold;
-        private readonly TempSensor _tempSensor;
+        private readonly ISensorCtrl _tempSensor;
         private readonly IHeaterCtrl _heater;
 
-        public ECS(int thr, IHeaterCtrl heater)
+        public ECS(int thr, IHeaterCtrl heater, ISensorCtrl tempSensor) //Constructor injection
         {
             SetThreshold(thr);
-            _tempSensor = new TempSensor();
+            _tempSensor = tempSensor;
             _heater = heater;
         }
 
