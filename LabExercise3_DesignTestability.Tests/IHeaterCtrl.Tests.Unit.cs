@@ -60,14 +60,14 @@ namespace LabExercise3_DesignTestability.Tests
         public void TurnOn_CheckIfTurnOnIsCalled_StringEqualTrue()
         {
             _uut.TurnOn();
-            //Assert.That(_FakeTestStringTurnOn, Is.Equal(_uut.TurnOn_));
+            Assert.That(_FakeTestStringTurnOn, Is.EqualTo(_uut.TurnOnP));
         }
 
         [Test]
         public void TurnOff_CheckIfTurnOffIsCalled_StringEqualTrue()
         {
             _uut.TurnOff();
-            //Assert.That(_FakeTestStringTurnOff, Is.Equal(_uut.TurnOn_)); 
+            Assert.That(_FakeTestStringTurnOff, Is.EqualTo(_uut.TurnOnP)); 
         }
 
     }
