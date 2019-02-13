@@ -15,8 +15,8 @@ namespace LabExercise3_DesignTestability.Tests
 
         public FakeHeater()
         {
-            TurnOnP = "Not turned On";
-            TurnOffP = "Not turned Off";
+            TurnOnP = "Not Turned On";
+            TurnOffP = "Not Turned Off";
         }
         public void TurnOn()
         {
@@ -70,5 +70,15 @@ namespace LabExercise3_DesignTestability.Tests
             Assert.That(_FakeTestStringTurnOff, Is.EqualTo(_uut.TurnOnP)); 
         }
 
+        [Test]
+        public void FakeHeaterConstructor_TestIfStringsSetCorrectly_StringsAreEqual()
+        {
+            FakeHeater _uut2 = new FakeHeater();
+            var TurnOn_ = "Not Turned On";
+            var TurnOff_ = "Not Turned Off"; 
+
+            Assert.That(TurnOn_, Is.EqualTo(_uut2.TurnOnP));
+            Assert.That(TurnOff_, Is.EqualTo(_uut2.TurnOffP));
+        }
     }
 }
