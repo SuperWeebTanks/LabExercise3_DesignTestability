@@ -8,7 +8,6 @@
 
     }
 
-
     public class Heater : IHeaterCtrl
     {
         public void TurnOn()

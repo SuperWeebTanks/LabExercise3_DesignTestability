@@ -8,5 +8,6 @@ namespace LabExercise3_DesignTestability.Tests
 {
     class ECS
     {
+
     }
 }
