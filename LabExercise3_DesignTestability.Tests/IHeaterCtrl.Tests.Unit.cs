@@ -81,10 +81,4 @@ namespace LabExercise3_DesignTestability.Tests
             Assert.That(TurnOff_, Is.EqualTo(_uut2.TurnOffP));
         }
     }
-
-    [TestFixture]
-    class FakeHeaterNSubstituteTests
-    {
-
-    }
 }
