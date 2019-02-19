@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using ECS.Legacy;
 using NSubstitute;
 using NUnit.Framework;
+using NUnit.Framework.Internal;
 
 namespace LabExercise3_DesignTestability.Tests
 {
@@ -21,6 +22,13 @@ namespace LabExercise3_DesignTestability.Tests
 
               var _uut = new ECS.Legacy.ECS(20, _heater, _sensor);
           }
+
+          [TestCase]
+          public void GetTemp()
+          {
+                _sensor
+          }
+
 
       }
     }
