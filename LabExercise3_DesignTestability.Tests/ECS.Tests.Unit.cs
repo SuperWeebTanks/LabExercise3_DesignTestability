@@ -22,7 +22,7 @@ namespace LabExercise3_DesignTestability.Tests
               IHeaterCtrl _heater = Substitute.For<IHeaterCtrl>();
               ISensorCtrl _sensor = Substitute.For<ISensorCtrl>();
 
-              var _uut = new ECS.Legacy.ECS(20, _heater, _sensor);
+              _uut = new ECS.Legacy.ECS(20, _heater, _sensor);
           }
 
           [Test]
