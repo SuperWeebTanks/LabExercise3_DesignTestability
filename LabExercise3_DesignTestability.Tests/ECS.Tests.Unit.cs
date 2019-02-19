@@ -26,9 +26,18 @@ namespace LabExercise3_DesignTestability.Tests
           }
 
           [Test]
-          public void 
-
+          public void Regulate_TempBelowThreshold_HeaterTurnOn()
+          {
+              _sensor.GetTemp().Returns(_uut.GetThreshold() - 10); 
+              _uut.Regulate();
+              _heater.Received(1).TurnOn();
           }
 
+          public void Regulate_TempAboveThreshold_HeaterTurnOff()
+          {
+              _sensor.GetTemp().Returns(_uut.GetThreshold()); 
+              _uut.Regulate();
+              _heater.Received(1).TurnOff();
+          }
     }
 }
