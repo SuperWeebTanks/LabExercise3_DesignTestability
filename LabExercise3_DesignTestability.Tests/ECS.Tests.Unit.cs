@@ -74,5 +74,30 @@ namespace LabExercise3_DesignTestability.Tests
               _uut._heater.Received(1);
               _uut._tempSensor.Received(1); 
           }
+
+          [TestCase(10)]
+          [TestCase(0)]
+          [TestCase(-10)]
+        public void ECS_GetCurTemp_(int a)
+          {
+              _sensor.GetTemp().Returns(a);
+              Assert.That(_uut.GetCurTemp(), Is.EqualTo(a));
+
+          }
+
+          [TestCase(10)]
+          [TestCase(0)]
+          [TestCase(-10)]
+        public void ECS_setAndGetThreshold(int a)
+          {
+              _uut.SetThreshold(a);
+              Assert.That(_uut.GetThreshold(), Is.EqualTo(a));
+          }
+
+        [Test]
+        public void ECS_SetThreshold_ArgumentUnderOrEqualToMinus20_Exception()
+        {
+            Assert.Throws<Exception>(()=>_uut.SetThreshold(-20));
+        }
     }
 }

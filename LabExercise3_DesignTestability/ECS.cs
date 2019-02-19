@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 
 namespace ECS.Legacy
 {
@@ -27,7 +28,10 @@ namespace ECS.Legacy
 
         public void SetThreshold(int thr)
         {
-            _threshold = thr;
+            if (thr > -20)
+                _threshold = thr;
+            else
+                throw new Exception();
         }
 
         public int GetThreshold()
