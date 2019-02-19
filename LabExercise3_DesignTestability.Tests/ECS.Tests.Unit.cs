@@ -12,6 +12,9 @@ namespace LabExercise3_DesignTestability.Tests
       [TestFixture]
       class NSubstituteTests
       {
+          private IHeaterCtrl _heater;
+          private ISensorCtrl _sensor;
+          private ECS.Legacy.ECS _uut;
 
           [SetUp]
           public void Setup()
@@ -21,6 +24,10 @@ namespace LabExercise3_DesignTestability.Tests
 
               var _uut = new ECS.Legacy.ECS(20, _heater, _sensor);
           }
+
+          [Test]
+          public void 
+
 
       }
     }
