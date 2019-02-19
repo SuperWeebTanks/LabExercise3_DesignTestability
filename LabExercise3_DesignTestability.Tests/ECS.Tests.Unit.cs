@@ -33,11 +33,20 @@ namespace LabExercise3_DesignTestability.Tests
               _heater.Received(1).TurnOn();
           }
 
+          [Test]
           public void Regulate_TempAboveThreshold_HeaterTurnOff()
           {
               _sensor.GetTemp().Returns(_uut.GetThreshold()); 
               _uut.Regulate();
               _heater.Received(1).TurnOff();
+          }
+
+          [Test]
+          public void ECS_InitHeaterAndSensor_HeaterAndSensorInit()
+          {
+              var _uut = new ECS.Legacy.ECS(10, _heater, _sensor);
+              _uut._heater.Received(1);
+              _uut._tempSensor.Received(1); 
           }
     }
 }
