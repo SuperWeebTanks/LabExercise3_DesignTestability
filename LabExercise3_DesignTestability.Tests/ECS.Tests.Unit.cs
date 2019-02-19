@@ -19,8 +19,8 @@ namespace LabExercise3_DesignTestability.Tests
           [SetUp]
           public void Setup()
           {
-              IHeaterCtrl _heater = Substitute.For<IHeaterCtrl>();
-              ISensorCtrl _sensor = Substitute.For<ISensorCtrl>();
+              _heater = Substitute.For<IHeaterCtrl>();
+              _sensor = Substitute.For<ISensorCtrl>();
 
               _uut = new ECS.Legacy.ECS(20, _heater, _sensor);
           }
