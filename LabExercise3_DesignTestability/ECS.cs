@@ -5,8 +5,8 @@ namespace ECS.Legacy
     public class ECS
     {
         private int _threshold;
-        private readonly ISensorCtrl _tempSensor;
-        private readonly IHeaterCtrl _heater;
+        public ISensorCtrl _tempSensor { get; private set; }
+        public IHeaterCtrl _heater { get; private set; }
 
         public ECS(int thr, IHeaterCtrl heater, ISensorCtrl tempSensor) //Constructor injection
         {
